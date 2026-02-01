@@ -1,7 +1,6 @@
 import type { ReactElement } from 'react'
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from '@tanstack/react-router'
-import { useSchema } from '../hooks'
 import { Search } from './Search'
 import { getHistory } from '../utils/history'
 import type { VisitedEntity } from '../utils/history'
@@ -12,7 +11,6 @@ interface SchemaHeaderProps {
 }
 
 export function SchemaHeader({ uuid }: SchemaHeaderProps): ReactElement {
-  const { data: schema } = useSchema(uuid)
   const location = useLocation()
   const [history, setHistory] = useState<VisitedEntity[]>([])
 
