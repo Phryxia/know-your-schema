@@ -20,7 +20,7 @@ export function SchemaHeader({ uuid }: SchemaHeaderProps): ReactElement {
   }, [uuid, location.pathname])
 
   return (
-    <header className="pico container">
+    <header>
       <HeaderContents uuid={uuid} />
 
       <Search uuid={uuid} />
