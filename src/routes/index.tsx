@@ -1,6 +1,7 @@
 import type { ReactElement, ChangeEvent } from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useSchemas, useUploadSchema, useDeleteSchema } from '../hooks'
+import { HeaderContents } from '../components/HeaderContents'
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -28,12 +29,13 @@ function Index(): ReactElement {
   return (
     <article>
       <header>
-        <h1>Know Your Schema</h1>
-        <p>GraphQL Schema Explorer</p>
+        <HeaderContents />
+        <p>IndexedDB based GraphQL schema explorer</p>
       </header>
 
       <section>
-        <h2>Upload Schema</h2>
+        <h2>Add Schema</h2>
+        <p>Will be stored to your local IndexedDB</p>
         <input
           type="file"
           accept=".graphql,.gql"

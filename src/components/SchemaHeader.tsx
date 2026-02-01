@@ -5,6 +5,7 @@ import { useSchema } from '../hooks'
 import { Search } from './Search'
 import { getHistory } from '../utils/history'
 import type { VisitedEntity } from '../utils/history'
+import { HeaderContents } from './HeaderContents'
 
 interface SchemaHeaderProps {
   uuid: string
@@ -22,12 +23,7 @@ export function SchemaHeader({ uuid }: SchemaHeaderProps): ReactElement {
 
   return (
     <header className="pico container">
-      <h1>
-        <Link to="/">Know Your Schema</Link> &gt;{' '}
-        <Link to="/schemas/$uuid" params={{ uuid }}>
-          {schema?.fileName || 'Loading...'}
-        </Link>
-      </h1>
+      <HeaderContents uuid={uuid} />
 
       <Search uuid={uuid} />
 
