@@ -17,6 +17,7 @@ function SchemaDetail(): ReactElement {
 
   const [queryLimit, setQueryLimit] = useState(10)
   const [mutationLimit, setMutationLimit] = useState(10)
+  const [interfaceLimit, setInterfaceLimit] = useState(10)
   const [typeUnionLimit, setTypeUnionLimit] = useState(10)
   const [enumLimit, setEnumLimit] = useState(10)
   const [inputLimit, setInputLimit] = useState(10)
@@ -63,10 +64,21 @@ function SchemaDetail(): ReactElement {
       />
 
       <EntityList
+        title="Interfaces"
+        entities={interfaces}
+        uuid={uuid}
+        group="interface"
+        limit={interfaceLimit}
+        onLoadMore={(): void => setInterfaceLimit(interfaceLimit + 10)}
+      />
+
+      <EntityList
         title="Types & Unions"
         entities={typesAndUnions}
         uuid={uuid}
-        groupResolver={(name: string): EntityGroup => (unions.includes(name) ? 'union' : 'type')}
+        groupResolver={(name: string): EntityGroup =>
+          unions.includes(name) ? 'union' : 'type'
+        }
         limit={typeUnionLimit}
         onLoadMore={(): void => setTypeUnionLimit(typeUnionLimit + 10)}
       />
