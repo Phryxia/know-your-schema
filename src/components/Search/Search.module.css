@@ -1,0 +1,9 @@
+.results {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
