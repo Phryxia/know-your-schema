@@ -2,6 +2,11 @@
   display: flex;
   align-items: center;
 
+  .separator {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
   .github-link {
     width: 2rem;
     margin-left: auto;

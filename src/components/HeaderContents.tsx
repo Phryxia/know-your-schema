@@ -18,7 +18,7 @@ export function HeaderContents({ uuid = '' }: Props): ReactElement {
       <Link to="/">Know Your Schema</Link>
       {uuid && (
         <>
-          &gt;{' '}
+          <span className={cx('separator')}>&gt;</span>
           <Link to="/schemas/$uuid" params={{ uuid }}>
             {schema?.fileName || 'Loading...'}
           </Link>
