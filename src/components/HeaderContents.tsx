@@ -29,7 +29,7 @@ export function HeaderContents({ uuid = '' }: Props): ReactElement {
         className={cx('github-link')}
         target="_blank"
       >
-        <img src="/logo-GitHub.svg" alt="github repository" />
+        <img src="/know-your-schema/logo-GitHub.svg" alt="github repository" />
       </a>
     </h1>
   )
